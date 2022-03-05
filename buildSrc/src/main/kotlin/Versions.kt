@@ -13,6 +13,7 @@ object Versions {
     const val retrofit = "2.7.0"
     const val httpLoggingInterceptor = "4.9.3"
     const val coroutines = "1.5.1"
+    const val pagingJetpack = "3.1.0"
     const val testCoroutines = "1.6.0"
     const val lifecycleExtensions = "2.2.0"
     const val lifecycleViewModel = "2.4.0"

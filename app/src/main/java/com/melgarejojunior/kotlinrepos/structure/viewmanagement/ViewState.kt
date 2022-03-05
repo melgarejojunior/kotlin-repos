@@ -1,0 +1,3 @@
+package com.melgarejojunior.kotlinrepos.structure.viewmanagement
+
+interface ViewState

@@ -37,14 +37,20 @@ android {
 dependencies {
     implementation project(":domain")
 
-    // Retrofit
+    //retrofit
     implementation(Dependencies.retrofit)
     implementation(Dependencies.retrofitGsonConverter)
     implementation(Dependencies.httpLoggingInterceptor)
 
+    //coroutines
     implementation(Dependencies.coroutines)
+
+    //koin
     implementation(Dependencies.koinCore)
 
+    //paging
+    implementation(Dependencies.pagingJetpack)
+    
     testImplementation(TestDependencies.junit)
     testImplementation(TestDependencies.koin)
     testImplementation(TestDependencies.koinJunit)

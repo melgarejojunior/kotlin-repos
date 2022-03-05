@@ -1,7 +1,6 @@
 package com.melgarejojunior.data.remote.entities
 
 import com.google.gson.annotations.SerializedName
-import java.util.*
 
 data class RepositoryResponse(
     @SerializedName("id") val id: Long? = null,
@@ -50,9 +49,9 @@ data class RepositoryResponse(
     @SerializedName("labels_url") val labelsUrl: String? = null,
     @SerializedName("releases_url") val releasesUrl: String? = null,
     @SerializedName("deployments_url") val deploymentsUrl: String? = null,
-    @SerializedName("created_at") val createdAt: Date? = null,
-    @SerializedName("updated_at") val updatedAt: Date? = null,
-    @SerializedName("pushed_at") val pushedAt: Date? = null,
+    @SerializedName("created_at") val createdAt: String? = null,
+    @SerializedName("updated_at") val updatedAt: String? = null,
+    @SerializedName("pushed_at") val pushedAt: String? = null,
     @SerializedName("git_url") val gitUrl: String? = null,
     @SerializedName("ssh_url") val sshUrl: String? = null,
     @SerializedName("clone_url") val cloneUrl: String? = null,
@@ -68,7 +67,7 @@ data class RepositoryResponse(
     @SerializedName("has_wiki") val hasWiki: Boolean? = null,
     @SerializedName("has_pages") val hasPages: Boolean? = null,
     @SerializedName("forks_count") val forksCount: Long? = null,
-    @SerializedName("mirror_url") val mirrorUrl: String?? = null,
+    @SerializedName("mirror_url") val mirrorUrl: String? = null,
     @SerializedName("archived") val archived: Boolean? = null,
     @SerializedName("disabled") val disabled: Boolean? = null,
     @SerializedName("open_issues_count") val openIssuesCount: Long? = null,

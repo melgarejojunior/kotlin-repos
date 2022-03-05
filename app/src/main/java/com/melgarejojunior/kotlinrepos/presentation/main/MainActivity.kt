@@ -1,7 +1,8 @@
-package com.melgarejojunior.kotlinrepos
+package com.melgarejojunior.kotlinrepos.presentation.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.melgarejojunior.kotlinrepos.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

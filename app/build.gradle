@@ -67,6 +67,9 @@ dependencies {
     implementation(Dependencies.lifecycleViewModel)
     implementation(Dependencies.lifecycleRuntime)
 
+    //paging
+    implementation(Dependencies.pagingJetpack)
+
 
     //tests
     testImplementation(TestDependencies.junit)

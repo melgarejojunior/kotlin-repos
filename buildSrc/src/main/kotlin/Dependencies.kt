@@ -18,4 +18,5 @@ object Dependencies {
         "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleViewModel}"
     const val lifecycleRuntime =
         "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleViewModel}"
+    const val pagingJetpack = "androidx.paging:paging-runtime:${Versions.pagingJetpack}"
 }
