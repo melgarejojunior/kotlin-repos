@@ -2,23 +2,26 @@ package com.melgarejojunior.data.remote.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.melgarejojunior.data.remote.entities.RepositoryResponse
+import com.melgarejojunior.data.remote.mapper.RepositoryResponseToRepository
 import com.melgarejojunior.data.remote.service.GithubRepositoriesService
+import com.melgarejojunior.domain.entities.GithubRepository
 import retrofit2.HttpException
 import java.io.IOException
 
 class GithubReposPagingSource(
     private val service: GithubRepositoriesService,
-) : PagingSource<Int, RepositoryResponse>() {
-    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, RepositoryResponse> {
+    private val mapper: RepositoryResponseToRepository,
+) : PagingSource<Int, GithubRepository>() {
+    override suspend fun load(params: LoadParams<Int>): LoadResult<Int, GithubRepository> {
         return try {
             val result = service.getRepositories(
                 language = KOTLIN,
                 sortType = SORT_BY,
-                page = params.key ?: STARTING_PAGE_INDEX)
+                page = params.key ?: STARTING_PAGE_INDEX
+            )
 
             LoadResult.Page(
-                data = result.items ?: emptyList(),
+                data = (result.items ?: emptyList()).map(mapper::map),
                 prevKey = params.key,
                 nextKey = STARTING_PAGE_INDEX.plus(1)
             )
@@ -29,7 +32,7 @@ class GithubReposPagingSource(
         }
     }
 
-    override fun getRefreshKey(state: PagingState<Int, RepositoryResponse>): Int? {
+    override fun getRefreshKey(state: PagingState<Int, GithubRepository>): Int? {
         return STARTING_PAGE_INDEX
     }
 

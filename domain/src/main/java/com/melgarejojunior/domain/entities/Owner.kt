@@ -5,4 +5,8 @@ data class Owner(
     val id: Long? = null,
     val nodeId: String? = null,
     val avatarUrl: String? = null,
-)
+) {
+    companion object {
+        fun empty() = Owner(login = "")
+    }
+}
