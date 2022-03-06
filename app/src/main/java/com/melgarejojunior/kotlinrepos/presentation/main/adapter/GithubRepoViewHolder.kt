@@ -1,4 +1,4 @@
-package com.melgarejojunior.kotlinrepos.presentation.main
+package com.melgarejojunior.kotlinrepos.presentation.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

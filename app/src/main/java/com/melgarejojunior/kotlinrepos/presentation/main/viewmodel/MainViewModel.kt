@@ -1,4 +1,4 @@
-package com.melgarejojunior.kotlinrepos.presentation.main
+package com.melgarejojunior.kotlinrepos.presentation.main.viewmodel
 
 import androidx.lifecycle.viewModelScope
 import androidx.paging.Pager

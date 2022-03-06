@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.melgarejojunior.kotlinrepos.databinding.ActivityMainBinding
+import com.melgarejojunior.kotlinrepos.presentation.main.adapter.RepoAdapter
+import com.melgarejojunior.kotlinrepos.presentation.main.viewmodel.MainViewModel
+import com.melgarejojunior.kotlinrepos.presentation.main.viewmodel.MainViewState
 import com.melgarejojunior.kotlinrepos.structure.viewmanagement.onStateChanged
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
