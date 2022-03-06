@@ -14,14 +14,21 @@ class MainViewModel(
     private val wrapperUseCase: PagingSourceWrappedUseCase<GithubReposPagingSource>,
 ) : ViewModel<MainViewState>(MainViewState.Idle) {
 
-    fun getItems() {
+    init {
+        getItems()
+    }
+
+    private fun getItems() {
         viewModelScope.launch {
             Pager(
                 config = PagingConfig(pageSize = 30),
                 pagingSourceFactory = { wrapperUseCase.source }
             )
                 .flow.cachedIn(viewModelScope)
-                .collect {
+                .collect { pagingData ->
+                    updateState {
+                        MainViewState.NewPage(pagingData)
+                    }
                 }
         }
     }

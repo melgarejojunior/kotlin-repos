@@ -12,11 +12,13 @@ class GithubReposPagingSource(
     private val service: GithubRepositoriesService,
     private val mapper: RepositoryResponseToRepository,
 ) : PagingSource<Int, GithubRepository>() {
+
+    override val keyReuseSupported: Boolean
+        get() = true
+
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, GithubRepository> {
         return try {
             val result = service.getRepositories(
-                language = KOTLIN,
-                sortType = SORT_BY,
                 page = params.key ?: STARTING_PAGE_INDEX
             )
 
@@ -38,7 +40,5 @@ class GithubReposPagingSource(
 
     companion object {
         private const val STARTING_PAGE_INDEX = 1
-        private const val KOTLIN = "kotlin"
-        private const val SORT_BY = "stars"
     }
 }

@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/defaultSpace"
+    android:layout_marginEnd="@dimen/defaultSpace"
+    android:layout_marginBottom="@dimen/halfSpace">
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/defaultSpace"
+        android:textColor="@color/black"
+        android:textSize="@dimen/title_text_size"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Repository Name" />
+
+    <TextView
+        android:id="@+id/starCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/halfSpace"
+        android:layout_marginEnd="@dimen/halfSpace"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/star"
+        app:layout_constraintEnd_toStartOf="@id/star"
+        app:layout_constraintTop_toTopOf="@id/star"
+        tools:text="5" />
+
+    <ImageView
+        android:id="@+id/star"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star"
+        app:layout_constraintBottom_toBottomOf="@id/name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/name" />
+
+    <TextView
+        android:id="@+id/forksCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/halfSpace"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name"
+        tools:text="1233" />
+
+    <TextView
+        android:id="@+id/forksLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/halfSpace"
+        android:text="@string/forks_label"
+        app:layout_constraintStart_toEndOf="@id/forksCount"
+        app:layout_constraintTop_toTopOf="@id/forksCount" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/forksGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="forksCount, forksLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/name" />
+
+    <ImageView
+        android:id="@+id/authorImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/halfSpace"
+        android:importantForAccessibility="no"
+        android:src="@android:drawable/ic_menu_report_image"
+        android:text="@string/author_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/forksCount" />
+
+
+    <TextView
+        android:id="@+id/authorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/halfSpace"
+        android:text="@string/author_label"
+        app:layout_constraintBottom_toBottomOf="@id/authorImage"
+        app:layout_constraintStart_toEndOf="@+id/authorImage"
+        app:layout_constraintTop_toTopOf="@id/authorImage" />
+
+    <TextView
+        android:id="@+id/authorName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/halfSpace"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/authorLabel"
+        app:layout_constraintTop_toTopOf="@id/authorLabel"
+        tools:text="John Doe" />
+</androidx.constraintlayout.widget.ConstraintLayout>
