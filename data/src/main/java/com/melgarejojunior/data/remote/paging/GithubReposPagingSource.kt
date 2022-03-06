@@ -2,23 +2,22 @@ package com.melgarejojunior.data.remote.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.melgarejojunior.data.remote.datasource.GithubRepositoriesRemoteDataSource
+import com.melgarejojunior.data.remote.exceptions.HttpException
 import com.melgarejojunior.data.remote.mapper.RepositoryResponseToRepository
-import com.melgarejojunior.data.remote.service.GithubRepositoriesService
 import com.melgarejojunior.domain.entities.GithubRepository
-import retrofit2.HttpException
 import java.io.IOException
 
 class GithubReposPagingSource(
-    private val service: GithubRepositoriesService,
+    private val remoteDataSource: GithubRepositoriesRemoteDataSource,
     private val mapper: RepositoryResponseToRepository,
 ) : PagingSource<Int, GithubRepository>() {
 
-    override val keyReuseSupported: Boolean
-        get() = true
+    override val keyReuseSupported: Boolean get() = true
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, GithubRepository> {
         return try {
-            val result = service.getRepositories(
+            val result = remoteDataSource.getKotlinRepositories(
                 page = params.key ?: STARTING_PAGE_INDEX
             )
 
