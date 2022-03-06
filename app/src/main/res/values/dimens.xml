@@ -3,4 +3,5 @@
     <dimen name="defaultSpace">16dp</dimen>
     <dimen name="halfSpace">8dp</dimen>
     <dimen name="title_text_size">22sp</dimen>
+    <dimen name="profile_image_size">48dp</dimen>
 </resources>

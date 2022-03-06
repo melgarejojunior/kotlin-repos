@@ -70,6 +70,9 @@ dependencies {
     //paging
     implementation(Dependencies.pagingJetpack)
 
+    //glide
+    implementation (Dependencies.glide)
+    annotationProcessor (Dependencies.glideProcessor)
 
     //tests
     testImplementation(TestDependencies.junit)

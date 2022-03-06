@@ -47,10 +47,11 @@ dependencies {
 
     //koin
     implementation(Dependencies.koinCore)
+    implementation(Dependencies.koinAndroid)
 
     //paging
     implementation(Dependencies.pagingJetpack)
-    
+
     testImplementation(TestDependencies.junit)
     testImplementation(TestDependencies.koin)
     testImplementation(TestDependencies.koinJunit)

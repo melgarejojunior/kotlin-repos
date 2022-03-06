@@ -19,4 +19,6 @@ object Dependencies {
     const val lifecycleRuntime =
         "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycleViewModel}"
     const val pagingJetpack = "androidx.paging:paging-runtime:${Versions.pagingJetpack}"
+    const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    const val glideProcessor = "com.github.bumptech.glide:compiler:${Versions.glide}"
 }
