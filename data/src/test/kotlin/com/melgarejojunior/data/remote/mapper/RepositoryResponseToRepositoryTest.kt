@@ -1,6 +1,8 @@
 package com.melgarejojunior.data.remote.mapper
 
 import com.melgarejojunior.data.remote.entities.RepositoryResponse
+import com.melgarejojunior.data.remote.githubRepositoryStub
+import com.melgarejojunior.data.remote.repositoryResponseStub
 import com.melgarejojunior.domain.entities.GithubRepository
 import com.melgarejojunior.domain.entities.Owner
 import org.junit.Test

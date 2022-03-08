@@ -1,4 +1,4 @@
-package com.melgarejojunior.data.remote.mapper
+package com.melgarejojunior.data.remote
 
 import com.melgarejojunior.data.remote.entities.OwnerResponse
 import com.melgarejojunior.data.remote.entities.RepositoryResponse
@@ -19,7 +19,7 @@ private const val FORKS_COUNT = 13L
 private val OWNER: Owner = Owner(LOGIN, ID, NODE_ID, AVATAR_URL)
 
 
-fun repositoryResponseStub() = RepositoryResponse(
+internal fun repositoryResponseStub() = RepositoryResponse(
     id = ID,
     nodeId = NODE_ID,
     name = NAME,
@@ -32,7 +32,7 @@ fun repositoryResponseStub() = RepositoryResponse(
     forksCount = FORKS_COUNT,
 )
 
-fun githubRepositoryStub() = GithubRepository(
+internal fun githubRepositoryStub() = GithubRepository(
     ID,
     NODE_ID,
     NAME,

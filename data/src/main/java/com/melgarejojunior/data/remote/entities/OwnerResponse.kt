@@ -2,7 +2,7 @@ package com.melgarejojunior.data.remote.entities
 
 import com.google.gson.annotations.SerializedName
 
-data class OwnerResponse(
+internal data class OwnerResponse(
     @SerializedName("login") val login: String? = null,
     @SerializedName("id") val id: Long? = null,
     @SerializedName("node_id") val nodeId: String? = null,

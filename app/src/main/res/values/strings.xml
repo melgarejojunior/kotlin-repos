@@ -2,4 +2,9 @@
     <string name="app_name">kotlin-repos</string>
     <string name="forks_label">forks</string>
     <string name="author_label">Author:</string>
+    <string name="loading">Wait...</string>
+    <string name="error_title">Ops!</string>
+    <string name="io_error_message">Something went wrong. Verify your internet connection and try again</string>
+    <string name="http_error_message">Something went wrong with our servers. Try again later.</string>
+    <string name="generic_error_message">Unexpected error. Sorry about it. Try again later</string>
 </resources>

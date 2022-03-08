@@ -5,7 +5,7 @@ import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface GithubRepositoriesService {
+internal interface GithubRepositoriesService {
 
     @GET("/search/repositories?q=language:kotlin&sort=stars")
     suspend fun getKotlinRepositories(

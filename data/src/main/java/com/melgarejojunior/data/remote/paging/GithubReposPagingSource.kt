@@ -8,7 +8,7 @@ import com.melgarejojunior.data.remote.mapper.RepositoryResponseToRepository
 import com.melgarejojunior.domain.entities.GithubRepository
 import java.io.IOException
 
-class GithubReposPagingSource(
+internal class GithubReposPagingSource(
     private val remoteDataSource: GithubRepositoriesRemoteDataSource,
     private val mapper: RepositoryResponseToRepository,
 ) : PagingSource<Int, GithubRepository>() {
@@ -34,7 +34,10 @@ class GithubReposPagingSource(
     }
 
     override fun getRefreshKey(state: PagingState<Int, GithubRepository>): Int? {
-        return STARTING_PAGE_INDEX
+        return state.anchorPosition?.let {
+            state.closestPageToPosition(it)?.prevKey?.plus(1)
+                ?: state.closestPageToPosition(it)?.nextKey?.minus(1)
+        }
     }
 
     companion object {

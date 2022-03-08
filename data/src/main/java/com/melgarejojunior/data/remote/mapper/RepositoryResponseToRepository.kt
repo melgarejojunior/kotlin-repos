@@ -5,7 +5,7 @@ import com.melgarejojunior.data.remote.entities.RepositoryResponse
 import com.melgarejojunior.domain.entities.GithubRepository
 import com.melgarejojunior.domain.entities.Owner
 
-class RepositoryResponseToRepository {
+internal class RepositoryResponseToRepository {
 
     fun map(source: RepositoryResponse): GithubRepository {
         return GithubRepository(
